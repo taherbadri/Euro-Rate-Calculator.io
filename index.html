@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro Rate Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-ld-3 col-md-6 col-sm-12">
+                <label for="gold" class="col-sm-12">Gold Rate<input type="text" id="gold" placeholder="Gold Rate per/gm"
+                        class="col-sm-12" value="6000"></label>
+                <label for="goldgm" class="col-sm-12">Grams<input type="number" id="goldgm" placeholder="Grams Achieved"
+                        class="col-sm-12" oninput="qtysch()" max="5" min="0"></label>
+            </div>
+            <div class="col-xl-3 col-ld-3 col-md-6 col-sm-12">
+                <label for="silver" class="col-sm-12">Silver Rate<input type="text" id="silver"
+                        placeholder="Silver Rate per/gm" class="col-sm-12" value="74"></label>
+                <label for="silvergm" class="col-sm-12" style="display: none;">Grams<input type="text" id="silvergm"
+                        placeholder="20gm on 10 Drums" class="col-sm-12" style="display: none;"></label>
+            </div>
+            <div class="col-xl-3 col-ld-3 col-md-12 col-sm-12">
+                <label for="inbill" class="col-sm-12">In Bill Discount<input type="text" id="inbill"
+                        placeholder="Discount per/kg" value="4.7" class="col-sm-12"></label>
+                <label for="quantity" class="col-sm-12">Total Quantity<input type="text" id="quantity"
+                        placeholder="Quantity Scheme Kg" class="col-sm-12"></label>
+            </div>
+            <div class="col-xl-3 col-ld-3 col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12">
+                    <button
+                        onclick="calcpur(), calcpur1(), calcpur2(), calcpur3(), calcpur4(), calcpur5(), calcpur6(), calcpur7(), calcpur8(),calcpur9(),calcpur10(),calcpur11(),calcpur12(),calcpur13(),calcpur14(),calcpur15()"
+                        class="col-sm-12 button">Calculate</button></div>
+            </div>
+
+
+        </div>
+        <table>
+            <caption>Euro WP 2 in 1</caption>
+            <tr>
+                <th>Quantity</th>
+                <th>Dealer's Price List</th>
+                <th>Purchase Price</th>
+                <th>Scheme Achieved</th>
+                <th>Sale Price</th>
+                <th>Profit / Loss</th>
+                <th>SP for 2% Profit</th>
+            </tr>
+            <tr>
+                <td>1 kg</td>
+                <td id="dpl1kgwp">330.4</td>
+                <td id="purchase"></td>
+                <td id="schwp1"></td>
+                <td id="wp1sp"></td>
+                <td id="p&l1"></td>
+                <td id="profitspwp1"></td>
+            </tr>
+            <tr>
+                <td>2 kg</td>
+                <td id="dpl2kgwp">637.2</td>
+                <td id="purchase2"></td>
+                <td id="schwp2"></td>
+                <td id="wp2sp"></td>
+                <td id="p&l2"></td>
+                <td id="profitspwp2"></td>
+            </tr>
+            <tr>
+                <td>5 kg</td>
+                <td id="dpl5kgwp">1516.3</td>
+                <td id="purchase3"></td>
+                <td id="schwp3"></td>
+                <td id="wp3sp"></td>
+                <td id="p&l3"></td>
+                <td id="profitspwp3"></td>
+            </tr>
+            <tr>
+                <td>10 kg</td>
+                <td id="dpl10kgwp">2920.5</td>
+                <td id="purchase4"></td>
+                <td id="schwp4"></td>
+                <td id="wp4sp"></td>
+                <td id="p&l4"></td>
+                <td id="profitspwp4"></td>
+            </tr>
+            <tr>
+                <td>20 kg</td>
+                <td id="dpl20kgwp">5605</td>
+                <td id="purchase5"></td>
+                <td id="schwp5"></td>
+                <td id="wp5sp"></td>
+                <td id="p&l5"></td>
+                <td id="profitspwp5"></td>
+            </tr>
+            <tr>
+                <td>30 kg</td>
+                <td id="dpl30kgwp">8248.2</td>
+                <td id="purchase6"></td>
+                <td id="schwp6"></td>
+                <td id="wp6sp"></td>
+                <td id="p&l6"></td>
+                <td id="profitspwp6"></td>
+            </tr>
+            <tr>
+                <td>50 kg</td>
+                <td id="dpl50kgwp">13369.4</td>
+                <td id="purchase7"></td>
+                <td id="schwp7"></td>
+                <td id="wp7sp"></td>
+                <td id="p&l7"></td>
+                <td id="profitspwp7"></td>
+            </tr>
+            <tr>
+                <td>60 kg</td>
+                <td id="dpl60kgwp">15989</td>
+                <td id="purchase8"></td>
+                <td id="schwp8"></td>
+                <td id="wp8sp"></td>
+                <td id="p&l8"></td>
+                <td id="profitspwp8"></td>
+            </tr>
+        </table>
+        <table contenteditable>
+            <caption>Euro Ultra 5 in 1</caption>
+            <tr>
+                <th>Quantity</th>
+                <th>Dealer's Price List</th>
+                <th>Purchase Price</th>
+                <th>Scheme Achieved</th>
+                <th>Sale Price</th>
+                <th>Profit / Loss</th>
+                <th>SP for 2% Profit</th>
+            </tr>
+            <tr>
+                <td>1 kg</td>
+                <td id="dpl1kgultra">379.96</td>
+                <td id="purchase9"></td>
+                <td id="schultra1"></td>
+                <td id="ultra1sp"></td>
+                <td id="p&l9"></td>
+                <td id="profitspultra1"></td>
+            </tr>
+            <tr>
+                <td>2 kg</td>
+                <td id="dpl2kgultra">745.76</td>
+                <td id="purchase10"></td>
+                <td id="schultra2"></td>
+                <td id="ultra2sp"></td>
+                <td id="p&l10"></td>
+                <td id="profitspultra2"></td>
+            </tr>
+            <tr>
+                <td>5 kg</td>
+                <td id="dpl5kgultra">1846.7</td>
+                <td id="purchase11"></td>
+                <td id="schultra3"></td>
+                <td id="ultra3sp"></td>
+                <td id="p&l11"></td>
+                <td id="profitspultra3"></td>
+            </tr>
+            <tr>
+                <td>10 kg</td>
+                <td id="dpl10kgultra">3575.4</td>
+                <td id="purchase12"></td>
+                <td id="schultra4"></td>
+                <td id="ultra4sp"></td>
+                <td id="p&l12"></td>
+                <td id="profitspultra4"></td>
+            </tr>
+            <tr>
+                <td>20 kg</td>
+                <td id="dpl20kgultra">7032.8</td>
+                <td id="purchase13"></td>
+                <td id="schultra5"></td>
+                <td id="ultra5sp"></td>
+                <td id="p&l13"></td>
+                <td id="profitspultra5"></td>
+            </tr>
+            <tr>
+                <td>30 kg</td>
+                <td id="dpl30kgultra" v>10454.8</td>
+                <td id="purchase14"></td>
+                <td id="schultra6"></td>
+                <td id="ultra6sp"></td>
+                <td id="p&l14"></td>
+                <td id="profitspultra6"></td>
+            </tr>
+            <tr>
+                <td>50 kg</td>
+                <td id="dpl50kgultra">17169</td>
+                <td id="purchase15"></td>
+                <td id="schultra7"></td>
+                <td id="ultra7sp"></td>
+                <td id="p&l15"></td>
+                <td id="profitspultra7"></td>
+            </tr>
+            <tr>
+                <td>60 kg</td>
+                <td id="dpl60kgultra">20532</td>
+                <td id="purchase16"></td>
+                <td id="schultra8"></td>
+                <td id="ultra8sp"></td>
+                <td id="p&l16"></td>
+                <td id="profitspultra8"></td>
+            </tr>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
